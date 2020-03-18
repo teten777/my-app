@@ -1,8 +1,11 @@
 node {
+
     stage('SCM Checkout') {
-        git 'https://github.com/teten777/my-app'
+        git branch: 'master', 
+        url: 'https://github.com/teten777/my-app'
     }
-    stage('Compile-Package') {
-        sh 'mvn clean package'
-    }
+
+    stage('Mvn Package'){
+	   sh "mvn clean package"
+   }
 }
