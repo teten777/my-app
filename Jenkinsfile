@@ -22,7 +22,7 @@ node {
                     [
                         artifactId: 'myweb', 
                         classifier: '', 
-                        file: 'target/my-app-0.0.7-SNAPSHOT.war', 
+                        file: 'target/myweb-0.0.7-SNAPSHOT.war', 
                         type: 'war'
                     ]
                 ], 
