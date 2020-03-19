@@ -18,16 +18,18 @@ node {
 
     stage('Upload war to nexus'){
         steps {
-            nexusArtifactUploader artifacts: [
-                [artifactId: 'myweb', classifier: '', file: 'target/my-app-1.0.0.war', type: 'war']
-            ], 
-            credentialsId: 'nexus3', 
-            groupId: 'in.javahome', 
-            nexusUrl: 'http://localhost:8083', 
-            nexusVersion: 'nexus3', 
-            protocol: 'http', 
-            repository: 'simpleapp-release/', 
-            version: '1.0.0'
+            script {
+                nexusArtifactUploader artifacts: [
+                    [artifactId: 'myweb', classifier: '', file: 'target/my-app-1.0.0.war', type: 'war']
+                ], 
+                credentialsId: 'nexus3', 
+                groupId: 'in.javahome', 
+                nexusUrl: 'http://localhost:8083', 
+                nexusVersion: 'nexus3', 
+                protocol: 'http', 
+                repository: 'simpleapp-release/', 
+                version: '1.0.0'
+            }
         }
     }	
 
