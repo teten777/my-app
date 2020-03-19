@@ -23,10 +23,10 @@ node {
             ], 
             credentialsId: 'nexus3', 
             groupId: 'in.javahome', 
-            nexusUrl: 'http://localhost', 
+            nexusUrl: 'http://localhost:8083', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
-            repository: 'http://localhost:8083/repository/simpleapp-release/', 
+            repository: 'simpleapp-release/', 
             version: '1.0.0'
         }
     }	
