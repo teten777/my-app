@@ -1,5 +1,7 @@
 node {
 
+    def sonarUrl = 'sonar.host.url=http://localhost:9000'
+
     stage('SCM Checkout') {
         git branch: 'master', 
         url: 'https://github.com/teten777/my-app'
@@ -7,6 +9,13 @@ node {
 
     stage('Mvn Package'){
 	   bat "mvn clean package"
+    }
+
+    stage('Sonarqube Analysis'){
+        withSonarQubeEnv('sonarqube-local') { 
+          bat "mvn sonar:sonar"
+        }
+	   
     }
 
     stage('Email Notification') {
